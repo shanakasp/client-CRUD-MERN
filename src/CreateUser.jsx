@@ -1,17 +1,20 @@
-import axios from "axios";
+import Axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CreateUser() {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
 
   const Submit = (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:3001/createUser", { name, email, age })
+    Axios.post("http://localhost:3001/createUser", { name, email, age })
       .then((result) => {
         console.log("User created successfully:", result.data);
+        navigate("/");
+
         // Optionally, you can navigate to another page or perform other actions upon successful submission.
       })
       .catch((err) => {
@@ -58,7 +61,7 @@ function CreateUser() {
               onChange={(e) => setAge(e.target.value)}
             />
           </div>
-          <button type="submit" className="btn bg-warning" onSubmit={Submit}>
+          <button type="submit" className="btn bg-warning">
             Submit
           </button>
         </form>
