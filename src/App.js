@@ -1,20 +1,30 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import CreateUser from "./CreateUser";
-import UpdateUser from "./UpdateUser";
-import Users from "./Users";
-
+import BackPain from "./Diseases/BackPain";
+import Earache from "./Diseases/Earache";
+import HeadachePage from "./Diseases/Headache";
+import JointPain from "./Diseases/JointPant";
+import KneePain from "./Diseases/KneePain";
+import NeckPain from "./Diseases/NeckPain";
+import ShoulderPain from "./Diseases/ShoulderPain";
+import Home from "./Home";
+import Login from "./Login";
+import Signup from "./Signup";
 function App() {
-  const [count, setcount] = useState(0);
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Users />} />
-        <Route path="/create" element={<CreateUser />} />
-        <Route path="/update/:id" element={<UpdateUser />} />
+        <Route path="/" element={<Signup />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/pain/1" element={<HeadachePage />} />
+        <Route path="/pain/2" element={<ShoulderPain />} />
+        <Route path="/pain/3" element={<BackPain />} />
+        <Route path="/pain/4" element={<Earache />} />
+        <Route path="/pain/5" element={<JointPain />} />
+        <Route path="/pain/6" element={<KneePain />} />
+        <Route path="/pain/7" element={<NeckPain />} />
       </Routes>
     </BrowserRouter>
   );
