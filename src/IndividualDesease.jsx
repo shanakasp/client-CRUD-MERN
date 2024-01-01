@@ -102,11 +102,11 @@ function IndividualDesease() {
           </div>
         )}
       </div>
-      <button type="submit" className="btn bg-primary">
+      <button type="submit" className="btn bg-warning">
         Next
       </button>
     </div>
   );
 }
 
-export default IndividualDesease;
+export default IndividualDesease
